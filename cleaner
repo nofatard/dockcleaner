@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#Descrip: remove all dockers images and containers
+#Author: Abdou
+
+
+docker stop $(docker ps -a -q)
+
+
+docker rm -f $(docker ps -a -q)
+
+docker rmi -f $(docker images -q)
+
+echo " docker images and containers removed successful "
+
